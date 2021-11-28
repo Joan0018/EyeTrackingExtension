@@ -1,0 +1,57 @@
+{
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    
+      "manifest_version": 2,
+      "version": "1.0.3",
+      "name": "Eye Monitoring",
+      "description": "Google Meet Eye Tracking Function",
+      "short_name": "Google Meet Monitoring System",
+      "permissions": [
+        "storage"
+      ],
+      "icons": {
+        "16": "./img/Eye_16.png",
+          "32": "./img/Eye_32.png",
+          "64": "./img/Eye_64.png",
+          "128": "./img/Eye_128.png"
+      },
+      "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "./img/Eye_16.png",
+            "32": "./img/Eye_32.png",
+            "64": "./img/Eye_64.png",
+            "128": "./img/Eye_128.png"
+        },
+        "default_title": "Eye Monitoring"
+      },
+    
+      "background": {
+        "scripts": [
+          "/js/browser-polyfill.js"
+        ],
+        "persistent": false
+      },
+      "content_scripts": [
+        {
+          "run_at": "document_start",
+          "matches": [
+            "*://meet.google.com/*"
+          ],
+          "css":[
+            "./css/styles.css"
+          ],
+          "js": [
+            "/js/tf/tf-core.js",
+            "/js/tf/tf-converter.js",
+            "js/tf/tfjs-backend-cpu.js",
+            "/js/tf/tf-backend-webgl.js",
+            "/js/browser-polyfill.js",
+            "js/tf/face-landmarks-detection.js",
+            "/js/contents.js"
+          ]
+        }
+      ],
+      "offline_enabled": true,
+      "web_accessible_resources": [ "js/mediaSourceSwap.js", "img/*.jpg" ]
+    }

@@ -1,0 +1,32 @@
+#show-gma-attendance-fields{
+	align-items: center;
+	background-color: transparent;
+	border: 1px solid #CCC;
+	border-radius: 30%;
+	color: #444;
+	display: inline-flex;
+	font-size: 20px;
+	font-weight: bold;
+	height: 35px;
+	margin: 0 8px;
+	opacity: .75;
+	text-indent: 19px;
+	vertical-align: middle;
+	width: 54px;
+}
+
+#show-gma-attendance-fields:hover{
+	background-color: white;
+	box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149);
+	color: #666;
+	cursor: pointer;
+}
+
+#show-gma-attendance-fields.showing{
+	color: white;
+	background-color: #ea4335;
+}
+
+#show-gma-attendance-fields label{
+	color: unset!important;
+}
